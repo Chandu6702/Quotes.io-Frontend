@@ -1,8 +1,11 @@
 import React from 'react'
+import Styles from './Footer.module.css'
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <div className={Styles['footer']}>
+      <h1>Quotes</h1>
+    </div>
   )
 }
 

@@ -1,0 +1,21 @@
+nav{
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+    width:95%;
+    margin-left: 2%;
+}
+.logo{
+    margin-left: 10px;
+}
+
+.btn-box{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin-left:75%;
+    column-gap: 50px;
+}
+
+
