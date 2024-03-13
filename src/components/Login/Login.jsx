@@ -3,7 +3,8 @@ import Styles from './Login.module.css'
 
 function Login() {
   return (
-    <div className={Styles['container']}>
+  <div className={Styles['container']}>
+    <div className={Styles['heading']}>
       <h2>Login</h2>
       <div className={Styles['login-card']}>
         <form>
@@ -17,6 +18,7 @@ function Login() {
         </form>
       </div>
     </div>
+  </div>
   )
 }
 

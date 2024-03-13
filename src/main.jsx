@@ -9,7 +9,7 @@ import Quotes from './components/Quotes/Quotes.jsx'
 
 const router=createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App/>} >
-    <Route index element={<Home/>}></Route>
+    <Route path='' element={<Home/>}></Route>
     <Route path='login' element={<Login/>} ></Route>
     <Route path='signup' element={<SignUp/>}></Route>
     <Route path='quotes' element={<Quotes/>}></Route>

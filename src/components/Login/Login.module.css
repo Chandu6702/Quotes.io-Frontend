@@ -2,9 +2,21 @@
 {
     min-height: 100vh;
     display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    flex-direction: column;
+}
+.heading{
+    background-color: black;
+    width: 900px;
+    height: 900px;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.heading h2{
+    color: whitesmoke;
 }
 .login-card{
     display: flex;
@@ -16,12 +28,17 @@
     background-color: rgb(189, 194, 194);
 }
 
-form{
+.login-card form{
     display: flex;
     justify-content:space-evenly;
     align-items: center;
     flex-direction: column;
     width: 500px;
     height: 500px;
-    margin: 100px;
+    background-color: beige;
 }
+
+
+
+
+

@@ -1,17 +1,46 @@
-import React from 'react'
-import Styles from './Header.module.css'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import Styles from "./Header.module.css";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className={Styles['nav-bar']}>
-        <h1 className={Styles['logo']}>Quotes.io</h1>
-        <NavLink to={''} className={Styles['nav-btn']}>Home</NavLink>
-        <NavLink to={'/Quotes'} className={Styles['nav-btn']}>Quotes</NavLink>
-        <NavLink to={'/Login'} className={Styles['nav-btn']}>Login</NavLink>
-        <NavLink to={'/SignUp'} className={Styles['nav-btn']}>SignUp</NavLink>
-      </nav>
-  )
+    <nav id={Styles["nav-bar"]}>
+      <h1 id={Styles["logo"]}>Quotes.io</h1>
+      <ul id={Styles['nav-list']}>
+        <li>
+          <NavLink to={""} className={({isActive})=>{
+            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
+          } } >
+            Home
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to={"/Quotes"} className={({isActive})=>{
+            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
+          } }>
+            Quotes
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to={"/Login"} className={({isActive})=>{
+            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
+          } }>
+            Login
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to={"/SignUp"} className={({isActive})=>{
+            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
+          } }>
+            SignUp
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
-export default Header
+export default Header;

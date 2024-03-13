@@ -1,7 +1,15 @@
-.footer{
-    border: 3px solid black;
-    border-radius: 5px;
+#footer{
     display: flex;
-    width:95%;
-    margin-left: 2%;
+    padding: 1%;
+    width:98%;
+    min-width: 600px;
+    font-size: 30px;
+    justify-content: space-between;
+    align-items: center;
+    background: #40019a;
+}
+
+#footer h2{
+    margin: 5px;
+    color: whitesmoke;
 }

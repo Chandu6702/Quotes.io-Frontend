@@ -1,19 +1,31 @@
-.nav-bar{
-    border: 3px solid black;
-    border-radius: 5px;
+#nav-bar{
     display: flex;
-    width:95%;
-    margin-left: 2%;
+    padding: 1%;
+    width:98%;
+    min-width: 600px;
     font-size: 30px;
     justify-content: space-between;
-    align-content: space-around;
     align-items: center;
+    background: #40019a;
 }
-.logo{
+#logo{
     margin: 5px;
-    
+    color: whitesmoke;
 }
+
+#nav-list{
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
 .nav-btn{
     text-decoration: none;
     margin: 5px;
+    color: whitesmoke;
+}
+
+.active{
+    font-size: 1.2em;
 }

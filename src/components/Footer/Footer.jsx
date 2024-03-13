@@ -3,8 +3,8 @@ import Styles from './Footer.module.css'
 
 function Footer() {
   return (
-    <div className={Styles['footer']}>
-      <h1>Quotes</h1>
+    <div id={Styles['footer']}>
+      <h2>Quotes</h2>
     </div>
   )
 }

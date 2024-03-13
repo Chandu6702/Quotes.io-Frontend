@@ -2,7 +2,8 @@ import React from 'react'
 import Styles from './SignUp.module.css'
 function SignUp() {
   return (
-    <div className={Styles['container']}>
+  <div className={Styles['container']}>
+    <div className={Styles['heading']}>
       <h2>SignUp</h2>
       <div className={Styles['signup-card']}>
         <form>
@@ -22,6 +23,7 @@ function SignUp() {
         </form>
       </div>
     </div>
+  </div>
   )
 }
 
