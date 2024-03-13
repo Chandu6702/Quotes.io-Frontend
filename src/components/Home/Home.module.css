@@ -1,8 +1,49 @@
 .container{
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background: red;
+    flex-direction: column;
 }
 
+.container hr{
+    margin: 5% 0;
+    background: rgba(255, 255, 255, 0.129);
+    height: 2px;
+    width: 90%;
+    display: block;
+    border: none;
+}
+
+#info-1{
+    width: 100%;
+}
+
+#list{
+    height: 30vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.items{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    color: whitesmoke;
+    background: #00000068;
+    padding: 2%;
+}
+
+.lines{
+    width: 3px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.129);
+}
+
+.items h3{
+    font-size: 2em;
+    color: #5604c7;
+}

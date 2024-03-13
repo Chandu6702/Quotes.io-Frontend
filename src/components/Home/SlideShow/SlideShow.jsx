@@ -1,14 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from './SlideShow.module.css'
 
 function SlideShow() {
+
+  const arr=[
+    'Inosdasd asasd as a ','sadas da  a sdsa as asdas das','dasddsad adsadsdasd dsadq daasdq asd ','asdassdsdasdsd sdasdasdsadqdsada sda'
+  ]
+
+  const[idx,setIdx]=useState(0)
+
+  function handleNext(e){
+      setIdx((prev) => {
+        return (prev + 1) % arr.length
+    })
+  }
+    
+  function handlePrevious(e){
+    setIdx((idx-1+arr.length)%arr.length)
+  }
+
+  useEffect(() => {
+    const ref = setInterval(handleNext, 2000);
+    return () => clearInterval(ref);
+}, [])
+
   return (
     <div id={Styles['container']}>
-        <button>{'<'}</button>
+        <button onClick={handlePrevious} >{'<'}</button>
         <h1>
-            Test asa asd sad asd 
+            {arr[idx]}
         </h1>
-        <button>{'>'}</button>
+        <button onClick={handleNext} >{'>'}</button>
     </div>
   )
 }
