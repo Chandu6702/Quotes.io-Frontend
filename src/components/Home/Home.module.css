@@ -47,3 +47,31 @@
     font-size: 2em;
     color: #5604c7;
 }
+
+#info-2{
+    height: 40vh;
+    width: 95%;
+    /* background-color: #00000068; */
+    display: flex;
+    justify-content:space-around;
+    align-items:center; 
+    color: whitesmoke;
+}
+
+.img-card{
+    height: 90%;
+    width:50%;
+    background-color: #00000068;;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.para{
+    height:90%;
+    width:40%;
+    background-color: #00000068;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
