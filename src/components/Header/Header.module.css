@@ -1,7 +1,7 @@
 #nav-bar {
     display: flex;
     min-width: 30%;
-    font-size: 3rem;
+    font-size: 2rem;
     justify-content: space-between;
     align-items: center;
     background: #40019a;
