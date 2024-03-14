@@ -67,7 +67,7 @@
 }
 
 #info-2 img {
-    width: 50rem;
+    width: 70rem;
     aspect-ratio: 16/9;
     animation: leviate 5s ease infinite;
 }
@@ -80,7 +80,7 @@
 
 .para {
     height: 10rem;
-    width: 70rem;
+    /* width: ; */
     text-align: center;
     padding: 5% 0;
     margin-right: 5%;
@@ -89,9 +89,9 @@
 
 .para h1 {
     color: #5604c7;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .para p {
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
