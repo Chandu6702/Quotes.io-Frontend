@@ -1,44 +1,44 @@
-#footer{
+#footer {
     color: white;
     background: #40019a;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
-#container{
+#container {
     display: flex;
     padding: 1%;
-    width:98%;
+    width: 98%;
     min-width: 600px;
-    font-size: 30px;
+    font-size: 3rem;
     justify-content: space-between;
     align-items: center;
 }
 
-#footer h2{
+#footer h2 {
     margin: 5px;
     color: whitesmoke;
 }
 
-#info{
+#info {
     color: white;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     border-radius: 1rem;
 }
 
-#links{
+#links {
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    width: 80rem;
+    width: 40vw;
     padding: 2% 0;
 }
 
-#links ul{
+#links ul {
     list-style: none;
 }
 
-#links ul li{
+#links ul li {
     margin-bottom: 1rem;
 }
