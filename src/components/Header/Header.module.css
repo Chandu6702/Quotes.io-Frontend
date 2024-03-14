@@ -1,15 +1,17 @@
 #nav-bar {
     display: flex;
     min-width: 30%;
-    font-size: 2rem;
+    font-size: 3rem;
     justify-content: space-between;
     align-items: center;
     background: #40019a;
+    padding: 2% 0;
 }
 
 #logo {
-    margin-left: 1rem;
+    margin-left: 2rem;
     color: whitesmoke;
+    font-size: 3rem;
 }
 
 #nav-list {
