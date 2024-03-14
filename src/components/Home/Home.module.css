@@ -24,7 +24,7 @@
 }
 
 #list {
-    height: 50vh;
+    height: 30rem;
     display: flex;
     justify-content: space-evenly;
     /* background: red; */
@@ -57,7 +57,7 @@
 /* Section 2 */
 
 #info-2 {
-    height: 40vh;
+    height: 20rem;
     width: 100%;
     margin: 20% 0;
     display: flex;
@@ -67,7 +67,7 @@
 }
 
 #info-2 img {
-    width: 50%;
+    width: 50rem;
     aspect-ratio: 16/9;
     animation: leviate 5s ease infinite;
 }
@@ -79,6 +79,7 @@
 }
 
 .para {
+    height: 10rem;
     text-align: center;
     padding: 5% 0;
     margin-right: 5%;
