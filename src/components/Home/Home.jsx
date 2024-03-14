@@ -4,6 +4,7 @@ import SlideShow from "./SlideShow/SlideShow";
 function Home() {
   return (
     <div className={Styles["container"]}>
+
       <section id={Styles["hero"]}>
         <SlideShow />
       </section>
@@ -11,6 +12,7 @@ function Home() {
       <hr />
 
       <section id={Styles["info-1"]}>
+
         <ul id={Styles["list"]}>
           <li className={Styles["items"]}>
             <h3>blasd sd asd sda sd</h3>
@@ -32,15 +34,14 @@ function Home() {
       <hr />
 
       <section id={Styles["info-2"]}>
-        <div className={Styles["img-card"]}>
-          <h2>Image</h2>
-        </div>
-        {/* <div className={Styles["lines"]}></div> */}
+        <img src="/reading.svg"></img>
 
         <div className={Styles["para"]}>
-          <h2>fjfflkkkfklf.fkfko'k;kf;kfkfkf;k,gjfsflw</h2>
+          <h1>asd edwqdd qdwqwdqw dwqdqdwqd</h1>
+          <p>sad asd ds ad wdsadqwd qdqwd qwdqw3d qwdqwdwq dqwdqwdqw dwqd qwdqwdq wdqwdqw dqwdqwd qwdqwd qw dwqd qw3dwe wqd fqfg qfqw fdwqfqfqw fqwfq3wfr wfqdrfw2ewqrf qwrqwrfqwf qrfq3wtqgt qgtq tgqwrwqtq3wgqtw3q tfqwrtwqgt wqs</p>
         </div>
       </section>
+
     </div>
   );
 }

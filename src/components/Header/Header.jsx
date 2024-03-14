@@ -8,33 +8,33 @@ function Header() {
       <h1 id={Styles["logo"]}>Quotes.io</h1>
       <ul id={Styles['nav-list']}>
         <li>
-          <NavLink to={""} className={({isActive})=>{
-            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
-          } } >
+          <NavLink to={""} className={({ isActive }) => {
+            return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
+          }} >
             Home
           </NavLink>
         </li>
 
         <li>
-          <NavLink to={"/Quotes"} className={({isActive})=>{
-            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
-          } }>
+          <NavLink to={"/Quotes"} className={({ isActive }) => {
+            return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
+          }}>
             Quotes
           </NavLink>
         </li>
 
         <li>
-          <NavLink to={"/Login"} className={({isActive})=>{
-            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
-          } }>
+          <NavLink to={"/Login"} className={({ isActive }) => {
+            return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
+          }}>
             Login
           </NavLink>
         </li>
 
         <li>
-          <NavLink to={"/SignUp"} className={({isActive})=>{
-            return Styles['nav-btn']+' '+(isActive?Styles['active']:'')
-          } }>
+          <NavLink to={"/SignUp"} className={({ isActive }) => {
+            return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
+          }}>
             SignUp
           </NavLink>
         </li>
