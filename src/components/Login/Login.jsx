@@ -5,7 +5,7 @@ function Login() {
   return (
     <div className={Styles['container']}>
 
-      <img src='/reading.svg' />
+      <img src='Computer login-pana.svg' />
 
       <div className={Styles['login-card']}>
         <h2>Login</h2>
