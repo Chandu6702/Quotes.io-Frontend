@@ -5,24 +5,29 @@
     align-items: center;
 }
 
-.login-card {
+.container img{
+    width: 35%;
+    opacity:0.8;
+}
+
+.signup-card {
     position: relative;
     color: white;
     background: rgba(0, 0, 0, 0.253);
-    width: 25%;
-    height: 30rem;
+    width: 30%;
+    height: 35rem;
     top: 3rem;
     padding: 2%;
     border-radius: 1rem;
     box-shadow: 0 0 1rem #7c1fff;
 }
 
-.login-card h2 {
+.signup-card h2 {
     text-decoration: underline;
     font-size: 2rem;
 }
 
-.login-card form {
+.signup-card form {
     width: 100%;
     height: 100%;
     display: flex;
@@ -31,7 +36,7 @@
     align-items: center;
 }
 
-.login-card form input {
+.signup-card form input {
     width: 100%;
     border: none;
     outline: none;
@@ -42,13 +47,13 @@
     transition: all 0.2s ease;
 }
 
-.login-card input:focus {
+.signup-card input:focus {
     color: black;
     box-shadow: 0 0 1rem white;
     transform: scale(1);
 }
 
-.login-card form button {
+.signup-card form button {
     border: none;
     padding: 0.5em 1em;
     background: white;
@@ -56,7 +61,7 @@
     transition: all 0.5s ease;
 }
 
-.login-card button:hover {
+.signup-card button:hover {
     background: #40019a;
     color: white;
     transform: scale(1.1);
