@@ -63,9 +63,7 @@ function Login() {
 
   return (
     <div className={Styles['container']}>
-
-      <img src='Computer login-pana.svg' />
-
+      <img src='Computer login-pana.svg'/>
       <div className={Styles['login-card']}>
         <h2>Log In</h2>
         <form onSubmit={handleSubmit}>
@@ -73,9 +71,7 @@ function Login() {
           <input type="password" name="password" placeholder='Enter Your Password' id={Styles['password']} value={loginInfo.password} onChange={handleChange}/>
           <button type="submit">Log In</button>
         </form>
-
       </div>
-
     </div>
   )
 }

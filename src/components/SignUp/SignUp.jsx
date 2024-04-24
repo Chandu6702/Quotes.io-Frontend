@@ -68,9 +68,7 @@ function SignUp() {
 
   return (
     <div className={Styles['container']}>
-
-      <img src='/signup.svg' />
-
+      <img src='signup.svg'/>
       <div className={Styles['signup-card']}>
         <h2>Sign Up</h2>
         <form>
