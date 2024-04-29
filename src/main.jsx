@@ -6,6 +6,7 @@ import Home from './components/Home/Home.jsx'
 import Login from './components/Login/Login.jsx'
 import SignUp from './components/SignUp/SignUp.jsx'
 import Quotes from './components/Quotes/Quotes.jsx'
+import MyQuotes from './components/MyQuotes/MyQuotes.jsx'
 
 const router=createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App/>} >
@@ -13,6 +14,7 @@ const router=createBrowserRouter(createRoutesFromElements(
     <Route path='login' element={<Login/>} ></Route>
     <Route path='signup' element={<SignUp/>}></Route>
     <Route path='quotes' element={<Quotes/>}></Route>
+    <Route path='my-quotes' element={<MyQuotes/>}></Route>
   </Route>
 ))
 

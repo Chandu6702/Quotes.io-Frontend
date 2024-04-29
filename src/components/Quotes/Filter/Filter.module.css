@@ -1,0 +1,34 @@
+#container{
+    height:50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:flex-start;
+    margin-top: 50%;
+    margin-left: 5%;
+    border: 2px solid  rgba(255, 255, 255, 0.129);
+    border-radius: 20px;
+    background: #00000042;
+    color: white;
+    font-size: 2rem;
+}
+
+#genere{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20%;
+}
+
+#genere ul li{
+    list-style: none;
+}
+
+#sort-by{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20%;
+}
