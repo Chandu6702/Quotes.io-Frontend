@@ -13,7 +13,7 @@
     font-size: 2rem;
 }
 
-#genere{
+#genres{
     color:white;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
     margin-left: 20%;
 }
 
-#genere ul li{
+#genres ul li{
     list-style: none;
 }
 
