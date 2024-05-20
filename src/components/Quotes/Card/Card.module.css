@@ -11,9 +11,7 @@
     flex-direction: column;
 }
 
-.quote{
 
-}
 
 .quote::before{
     content: open-quote;
