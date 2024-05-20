@@ -1,29 +1,39 @@
-.container{
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+
+
+.container {
     height: 200px;
-    width: 600px;
-    border: 1px solid  rgba(255, 255, 255, 0.538);
+    width: 30vw;
+    min-width: 450px;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.538);
     border-radius: 20px;
     color: white;
     background: #00000042;
+    text-align: center;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     flex-direction: column;
 }
 
 
 
-.quote::before{
+.quote::before {
     content: open-quote;
-    font-size: 30px;
+    font-size: 3rem;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: "Nabla", system-ui;
 }
 
-.quote::after{
+.quote::after {
     content: close-quote;
     font-size: 30px;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: "Nabla", system-ui;
 }
 
-.wrapper{
+.wrapper {
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -32,23 +42,26 @@
     top: 30px;
 }
 
-.icons{
+.icons {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     position: relative;
-    right: 50px;
+    /* right: 50px; */
 }
 
-.author{
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.461);
+.author {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.479);
 }
 
-.like,.comment,.share{
+.like,
+.comment,
+.share {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
