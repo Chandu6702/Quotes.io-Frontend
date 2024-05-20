@@ -25,19 +25,23 @@ function Filter() {
         <h3>Genres</h3>
         <hr />
         <ul>
-          {genresArr.map((value, idx) => (
-            <li key={idx} className={Styles['genre-items']} data-value={value} onClick={handleGenre}>{value}</li>
-          ))}
+          {genresArr.map((value, idx) => {
+            const rand = Math.random();
+            console.log(rand)
+            return (
+              <li key={idx} className={Styles['genre-items'] + " " + (rand > 0.5 ? Styles["rand"] : "")} data-value={value} onClick={handleGenre}>{value}</li>
+            )
+          })}
         </ul>
       </section>
 
-      <section id={Styles["sort-by"]}>
+      <section id={Styles["sortby"]}>
         <h3>Sort-By</h3>
         <hr />
         {
           sortBy.map((value, idx) => (
-            <label htmlFor={Styles[value]} key={idx}>
-              <input type="radio" id={Styles[value]} name="choice" /> {value}
+            <label htmlFor={Styles[value]} key={idx} className={Styles['sortby-items']}>
+              <input type="radio" id={Styles[value]} name="sortby" /> {value}
             </label>
           ))
         }

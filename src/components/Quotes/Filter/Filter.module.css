@@ -44,11 +44,24 @@
     box-shadow: 0 0 1rem white;
 }
 
+.rand:hover {
+    box-shadow: 0 0 1rem rgb(255, 0, 255);
+}
 
-#sort-by {
+
+#sortby {
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* text-align: left; */
+}
+
+.sortby-items {
+    border: none;
+    min-width: 20px;
+    border-radius: 10px;
+}
+
+.sortby-items:hover {
+    box-shadow: 0 0 1rem white;
 }
