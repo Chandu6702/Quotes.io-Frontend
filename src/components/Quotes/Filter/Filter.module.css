@@ -40,11 +40,11 @@
     text-align: center;
 }
 
-.genre-items:hover {
+.genre-items:hover,.select {
     box-shadow: 0 0 1rem white;
 }
 
-.rand:hover {
+.rand:hover,.rand-select {
     box-shadow: 0 0 1rem rgb(255, 0, 255);
 }
 
@@ -60,6 +60,8 @@
     border: none;
     min-width: 20px;
     border-radius: 10px;
+    padding-left: 5px;
+    margin: 5px 0px;
 }
 
 .sortby-items:hover {

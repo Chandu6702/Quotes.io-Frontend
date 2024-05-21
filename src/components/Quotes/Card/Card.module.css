@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 
 
 .container {
-    height: 200px;
+    min-height: 200px;
     width: 30vw;
     min-width: 350px;
-    max-width: 450px;
+    max-width: 550px;
     border: 1px solid rgba(255, 255, 255, 0.538);
     border-radius: 20px;
     color: white;
@@ -17,6 +17,9 @@
     flex-direction: column;
 }
 
+.quote{
+    font-family: "Courgette", cursive;
+}
 
 
 .quote::before {
