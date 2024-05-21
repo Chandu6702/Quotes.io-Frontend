@@ -22,7 +22,7 @@ function Search() {
         <div id={Styles['search-bar']}>
             <label className={Styles['wrapper']}>
                 <FiSearch color='grey' size="25" />
-                <input type='search' placeholder='Type here to search' value={searchParam.get("search")} onChange={handleChange} maxLength="50" onKeyDown={(e) => { e.key === "Enter" ? handleSubmit(e) : handleChange(e) }} />
+                <input type='search' placeholder='Type here to search' value={searchParam.has("search")?searchParam.get("search"):""} onChange={handleChange} maxLength="50" onKeyDown={(e) => { e.key === "Enter" ? handleSubmit(e) : handleChange(e) }} />
             </label>
             <button type='submit' onClick={handleSubmit}>Search</button>
         </div>

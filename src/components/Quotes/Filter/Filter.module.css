@@ -67,3 +67,7 @@
 .sortby-items:hover {
     box-shadow: 0 0 1rem white;
 }
+
+.sortby-items input{
+    margin-right: 5px;
+}

@@ -4,7 +4,13 @@ import { FaRegComment } from "react-icons/fa6";
 import { IoIosShareAlt } from "react-icons/io";
 import { FcLike } from "react-icons/fc";
 
+
 function Card({ text }) {
+
+  const handleLike=(e)=>{
+    console.log("liked");
+  }
+
   return (
     <div className={Styles["container"]}>
 
@@ -13,14 +19,14 @@ function Card({ text }) {
       <div className={Styles["wrapper"]}>
 
         <div className={Styles["icons"]}>
-          <div className={Styles['like']}>
+          <div className={Styles['like']}  onClick={handleLike}>
             <FcLike size={30} color="rgba(255, 255, 255, 0.581)" />
             143
           </div>
-          <div className={Styles['comment']}>
+          {/* <div className={Styles['comment']}>
             <FaRegComment size={30} color="rgba(255, 255, 255, 0.581)" />
             143
-          </div>
+          </div> */}
           <div className={Styles['share']}>
             <IoIosShareAlt size={30} color="rgba(255, 255, 255, 0.581)" />
           </div>
