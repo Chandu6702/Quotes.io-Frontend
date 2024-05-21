@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./Quotes.module.css";
-import Card from "./Card/Card.jsx";
+import Card from "../utils/Card/Card.jsx";
 import Filter from "./Filter/Filter.jsx";
 import Search from "./Search/Search.jsx";
 
