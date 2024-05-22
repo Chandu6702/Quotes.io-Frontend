@@ -34,7 +34,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 50px 10px;
-    border: 2px solid rgba(255, 255, 255, 0.129);
+    /* border: 2px solid rgba(255, 255, 255, 0.129); */
     padding: 20px;
     row-gap: 40px;
     overflow-y: auto;
