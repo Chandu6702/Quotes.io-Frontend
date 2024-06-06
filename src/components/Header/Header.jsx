@@ -1,18 +1,26 @@
 import React, { useContext } from "react";
 import Styles from "./Header.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import {UserContext} from '../../Context/UserContext/UserContext.js'
+import { UserContext } from '../../Context/UserContext/UserContext.js'
+import axios from "axios";
 
 function Header() {
 
-  const {userAuth,setUserAuth} =useContext(UserContext)
-  const navigate =useNavigate()
+  const { userAuth, setUserAuth, user } = useContext(UserContext)
+  const navigate = useNavigate()
 
-  function logout(e){
-    e.preventDefault()
-    localStorage.removeItem("user")
-    setUserAuth(false)
-    navigate("/")
+  async function logout(e) {
+    try {
+      e.preventDefault()
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/logout`, user);
+      if (response.data.status) {
+        localStorage.removeItem("user")
+        setUserAuth(false)
+        navigate("/")
+      }
+    } catch (error) {
+
+    }
   }
 
   return (
@@ -37,31 +45,31 @@ function Header() {
 
         <li>
           {
-            userAuth?<NavLink to={"/my-quotes"} className={({ isActive }) => {
+            userAuth ? <NavLink to={"/my-quotes"} className={({ isActive }) => {
               return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
             }}>
               My Quotes
-            </NavLink>:
-          <NavLink to={"/Login"} className={({ isActive }) => {
-            return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
-          }}>
-            Login
-          </NavLink>
-        }
+            </NavLink> :
+              <NavLink to={"/Login"} className={({ isActive }) => {
+                return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
+              }}>
+                Login
+              </NavLink>
+          }
         </li>
 
         <li>
           {
-            userAuth?<NavLink to={"/"} className={({ isActive }) => Styles['nav-btn']
+            userAuth ? <NavLink to={"/"} className={({ isActive }) => Styles['nav-btn']
             } onClick={logout} >
               Logout
-            </NavLink>:
-          <NavLink to={"/SignUp"} className={({ isActive }) => {
-            return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
-          }}>
-            SignUp
-          </NavLink>
-        }
+            </NavLink> :
+              <NavLink to={"/SignUp"} className={({ isActive }) => {
+                return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
+              }}>
+                SignUp
+              </NavLink>
+          }
         </li>
       </ul>
     </nav>

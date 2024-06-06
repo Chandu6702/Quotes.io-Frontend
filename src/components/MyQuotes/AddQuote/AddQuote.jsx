@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Styles from "./AddQuote.module.css"
+import axios from 'axios';
 
 function AddQuote({ fun }) {
 
@@ -37,6 +38,21 @@ function AddQuote({ fun }) {
         setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     }
 
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault();
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/add-quote`, data, {
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("ACCESS_TOKEN")
+                },
+                withCredentials: true
+            })
+            console.log(response);
+        } catch (error) {
+
+        }
+    }
+
     return (
         <div id={Styles['container']}>
             <div id={Styles['main']}>
@@ -58,7 +74,7 @@ function AddQuote({ fun }) {
                     })}
                 </ul>
                 <div id={Styles['post']}>
-                    <button>Post</button>
+                    <button onClick={handleSubmit} >Post</button>
                 </div>
             </div>
         </div>

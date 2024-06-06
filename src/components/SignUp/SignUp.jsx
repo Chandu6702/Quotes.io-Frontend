@@ -1,52 +1,52 @@
-import React, { useState,useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 import Styles from './SignUp.module.css'
-import {UserContext} from '../../Context/UserContext/UserContext.js'
+import { UserContext } from '../../Context/UserContext/UserContext.js'
 import { useNavigate } from 'react-router-dom'
 
 function SignUp() {
 
-  const {setUser,userAuth,setUserAuth}=useContext(UserContext)
-  const navigate=useNavigate()
+  const { setUser, userAuth, setUserAuth } = useContext(UserContext)
+  const navigate = useNavigate()
 
-  useEffect(()=>{
-    if(userAuth)
+  useEffect(() => {
+    if (userAuth)
       navigate("/")
-  },[])
+  }, [])
 
-  const[signupInfo,setSignupInfo]=useState({
-    email:'',
-    password:'',
-    repassword:''
+  const [signupInfo, setSignupInfo] = useState({
+    email: '',
+    password: '',
+    repassword: ''
   })
 
-  function handleChange(e){
-    setSignupInfo({...signupInfo,[e.target.name]:e.target.value});
+  function handleChange(e) {
+    setSignupInfo({ ...signupInfo, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    if(signupInfo.email==="" || signupInfo.password==="" || signupInfo.repassword===""){
+    if (signupInfo.email === "" || signupInfo.password === "" || signupInfo.repassword === "") {
       alert("Enter Required Fields")
       return
     }
 
-    if(signupInfo.password!==signupInfo.repassword){
+    if (signupInfo.password !== signupInfo.repassword) {
       alert("Password doesn't match")
-      return 
+      return
     }
 
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if(!signupInfo.email.match(validRegex)){
+    if (!signupInfo.email.match(validRegex)) {
       alert("Invalid Email");
       return
     }
 
-    const response=await axios.post('http://127.0.0.1:3000/signup',signupInfo);
+    const response = await axios.post('http://127.0.0.1:3000/signup', signupInfo);
 
-    if(!response.data.status){
+    if (!response.data.status) {
       alert(response.data.error)
       return;
     }
@@ -54,12 +54,12 @@ function SignUp() {
     alert("Account created Successfully");
 
     setUserAuth(true);
-    setUser({email:signupInfo.email})
-    localStorage.setItem("user",signupInfo.email);
+    setUser({ user: signupInfo.email })
+    localStorage.setItem("user", signupInfo.email);
     setSignupInfo({
-      email:'',
-      password:'',
-      repassword:''
+      email: '',
+      password: '',
+      repassword: ''
     })
 
     navigate("/")
@@ -68,13 +68,13 @@ function SignUp() {
 
   return (
     <div className={Styles['container']}>
-      <img src='signup.svg'/>
+      <img src='signup.svg' />
       <div className={Styles['signup-card']}>
         <h2>Sign Up</h2>
         <form>
           <input type="email" name="email" placeholder='Enter Your Email' id={Styles['email']} onChange={handleChange} value={signupInfo.email} />
-          <input type="password" name="password" placeholder='Enter Your Password' id={Styles['password']} onChange={handleChange} value={signupInfo.password}/>
-          <input type="password" name="repassword" placeholder='Enter Your Password Again' id={Styles['password']} onChange={handleChange} value={signupInfo.repassword}/>
+          <input type="password" name="password" placeholder='Enter Your Password' id={Styles['password']} onChange={handleChange} value={signupInfo.password} />
+          <input type="password" name="repassword" placeholder='Enter Your Password Again' id={Styles['password']} onChange={handleChange} value={signupInfo.repassword} />
           <button type="submit" onClick={handleSubmit}>Sign Up</button>
         </form>
       </div>

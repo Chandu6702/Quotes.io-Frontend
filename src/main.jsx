@@ -8,6 +8,9 @@ import SignUp from './components/SignUp/SignUp.jsx'
 import Quotes from './components/Quotes/Quotes.jsx'
 import MyQuotes from './components/MyQuotes/MyQuotes.jsx'
 
+import axios from 'axios'
+axios.defaults.withCredentials = true;
+
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App />} >
     <Route path='' element={<Home />}></Route>
