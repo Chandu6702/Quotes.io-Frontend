@@ -25,39 +25,44 @@ function Login() {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    try {
 
-    if (loginInfo.email === "" || loginInfo.password === "") {
-      alert("Enter Required Fields")
-      return
+      e.preventDefault();
+
+      if (loginInfo.email === "" || loginInfo.password === "") {
+        alert("Enter Required Fields")
+        return
+      }
+
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+      if (!loginInfo.email.match(validRegex)) {
+        alert("Invalid Email");
+        return
+      }
+
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/login`, loginInfo);
+
+      if (!response.data.status) {
+        alert(response.data.error)
+        return;
+      }
+
+      alert("Logged in Successfully");
+
+      setUserAuth(true);
+      setUser({ user: loginInfo.email })
+      localStorage.setItem("user", loginInfo.email);
+      setLoginInfo({
+        email: '',
+        password: '',
+        repassword: ''
+      })
+
+      navigate("/")
+    } catch (error) {
+
     }
-
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-    if (!loginInfo.email.match(validRegex)) {
-      alert("Invalid Email");
-      return
-    }
-
-    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/login`, loginInfo);
-
-    if (!response.data.status) {
-      alert(response.data.error)
-      return;
-    }
-
-    alert("Logged in Successfully");
-
-    setUserAuth(true);
-    setUser({ user: loginInfo.email })
-    localStorage.setItem("user", loginInfo.email);
-    setLoginInfo({
-      email: '',
-      password: '',
-      repassword: ''
-    })
-
-    navigate("/")
 
   }
 
