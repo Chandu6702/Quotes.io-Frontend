@@ -12,6 +12,7 @@ function Header() {
   async function logout(e) {
     try {
       e.preventDefault()
+      console.log(user);
       const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/logout`, user);
       if (response.data.status) {
         localStorage.removeItem("user")
