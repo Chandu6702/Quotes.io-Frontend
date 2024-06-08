@@ -22,10 +22,7 @@ function MyQuotes() {
 
   async function fetchQuotes() {
     try {
-      console.log(user);
-      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/quote/my-quotes?user=${user.user}&sortby=${searchParams.get("sortby")}&genre=${searchParams.get("genre")}`)
-
-      console.log(response);
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/quote/my-quotes?user=${user.email}&sortby=${searchParams.get("sortby")}&genre=${searchParams.get("genre")}`)
 
       setQuotes(response.data)
 

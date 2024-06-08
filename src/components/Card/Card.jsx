@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Styles from "./Card.module.css";
 import { IoIosShareAlt } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 import axios from 'axios';
+import { UserContext } from "../../Context/UserContext/UserContext.js"
 
 
 function Card({ text, author, liked, id, likes = 0 }) {
 
-  console.log(typeof liked, liked);
-
   const [isliked, setIsLiked] = useState(liked)
   const [likeCount, setLikeCount] = useState(likes)
+  const { user } = useContext(UserContext);
 
   async function handleLike(e) {
     try {
       setIsLiked(true)
       const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/quote/like`, {
         id: id,
-        user: author
+        user: user.email
       })
       setLikeCount(likeCount + 1);
-      console.log(response);
     } catch (error) {
+      console.log(error.message);
     }
   }
 
@@ -30,12 +30,11 @@ function Card({ text, author, liked, id, likes = 0 }) {
       setIsLiked(false)
       const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/quote/dislike`, {
         id: id,
-        user: author
+        user: user.email
       })
       setLikeCount(likeCount - 1);
-      console.log(response);
     } catch (error) {
-
+      console.log(error.message);
     }
   }
 

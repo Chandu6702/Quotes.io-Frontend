@@ -51,7 +51,7 @@ function Login() {
       alert("Logged in Successfully");
 
       setUserAuth(true);
-      setUser({ user: loginInfo.email })
+      setUser({ email: loginInfo.email })
       localStorage.setItem("user", loginInfo.email);
       setLoginInfo({
         email: '',

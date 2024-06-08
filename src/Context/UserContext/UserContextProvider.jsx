@@ -4,7 +4,7 @@ import { UserContext } from './UserContext.js'
 
 function UserContextProvider({ children }) {
 
-  const [user, setUser] = useState({ user: localStorage.getItem("user") } || { user: "" });
+  const [user, setUser] = useState({ email: localStorage.getItem("user") } || { email: "" });
   const [userAuth, setUserAuth] = useState(localStorage.getItem("user") ? true : false);
 
   return (
