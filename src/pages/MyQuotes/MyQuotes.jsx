@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Styles from './MyQuotes.module.css'
-import Filter from './Filter/Filter.jsx';
-import Card from "../utils/Card/Card.jsx"
-import AddQuote from './AddQuote/AddQuote.jsx';
+import Filter from '../../components/HorizontalFilter/HorizontalFilter.jsx';
+import Card from "../../components/Card/Card.jsx"
+import AddQuote from '../../components/AddQuote/AddQuote.jsx';
 import axios from 'axios';
 import { UserContext } from '../../Context/UserContext/UserContext.js';
 import { useSearchParams } from 'react-router-dom';

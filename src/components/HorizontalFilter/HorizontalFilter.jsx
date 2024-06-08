@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Styles from "./Filter.module.css";
+import Styles from "./HorizontalFilter.module.css";
 import { useSearchParams } from "react-router-dom";
 
 function Filter() {
@@ -72,23 +72,23 @@ function Filter() {
         <hr />
         <div id={Styles['sortby-items-wrapper']}>
 
-        {sortBy.map((value, idx) => (
-          <label
-          htmlFor={Styles[value]}
-          key={idx}
-          className={Styles["sortby-items"]}
-          >
-            <input
-              type="radio"
-              id={Styles[value]}
-              name="sortby"
-              value={value}
-              onClick={handleSortBy}
-            />
+          {sortBy.map((value, idx) => (
+            <label
+              htmlFor={Styles[value]}
+              key={idx}
+              className={Styles["sortby-items"]}
+            >
+              <input
+                type="radio"
+                id={Styles[value]}
+                name="sortby"
+                value={value}
+                onClick={handleSortBy}
+              />
 
-            {value}
-          </label>
-        ))}
+              {value}
+            </label>
+          ))}
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Styles from "./Filter.module.css";
+import Styles from "./VerticalFilter.module.css";
 import { useSearchParams } from "react-router-dom";
 
 function Filter() {

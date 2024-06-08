@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Styles from "./Home.module.css";
-import SlideShow from "./SlideShow/SlideShow";
+import SlideShow from "../../components/SlideShow/SlideShow.jsx";
 
 function Home() {
 
