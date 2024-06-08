@@ -53,8 +53,6 @@ function SignUp() {
 
     alert("Account created Successfully");
 
-    setUserAuth(true);
-    setUser({ user: signupInfo.email })
     setSignupInfo({
       email: '',
       password: '',
