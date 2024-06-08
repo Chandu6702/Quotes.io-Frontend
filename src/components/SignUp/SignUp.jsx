@@ -44,7 +44,7 @@ function SignUp() {
       return
     }
 
-    const response = await axios.post('http://127.0.0.1:3000/signup', signupInfo);
+    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/signup`, signupInfo);
 
     if (!response.data.status) {
       alert(response.data.error)

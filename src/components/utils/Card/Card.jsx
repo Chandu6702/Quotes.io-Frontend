@@ -1,14 +1,40 @@
 import React, { useState } from "react";
 import Styles from "./Card.module.css";
-import { FaRegComment } from "react-icons/fa6";
 import { IoIosShareAlt } from "react-icons/io";
-import { FcLike } from "react-icons/fc";
+import { FaHeart } from "react-icons/fa";
+import axios from 'axios';
 
 
-function Card({ text }) {
+function Card({ text, author, liked = false, id, likes = 0 }) {
 
-  const handleLike = (e) => {
-    console.log("liked");
+  const [isliked, setIsLiked] = useState(liked)
+  const [likeCount, setLikeCount] = useState(likes)
+
+  async function handleLike(e) {
+    try {
+      setIsLiked(true)
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/quote/like`, {
+        id: id,
+        user: author.email
+      })
+      setLikeCount(likeCount + 1);
+      console.log(response);
+    } catch (error) {
+    }
+  }
+
+  async function handleDisLike(e) {
+    try {
+      setIsLiked(false)
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/quote/dislike`, {
+        id: id,
+        user: author.email
+      })
+      setLikeCount(likeCount - 1);
+      console.log(response);
+    } catch (error) {
+
+    }
   }
 
   return (
@@ -20,9 +46,12 @@ function Card({ text }) {
 
         <div className={Styles["icons"]}>
 
-          <div className={Styles['like']} onClick={handleLike}>
-            <FcLike size={30} color="rgba(255, 255, 255, 0.581)" />
-            143
+          <div className={Styles['like']} onClick={isliked ? handleDisLike : handleLike}>
+            {isliked ?
+              <FaHeart size={30} color="red" /> :
+              <FaHeart size={30} color="rgba(73, 72, 72, 0.9)" />
+            }
+            {likeCount}
           </div>
 
           <div className={Styles['share']}>
@@ -32,7 +61,7 @@ function Card({ text }) {
         </div>
 
         <div>
-          <p className={Styles["author"]}>@monkeydfgfdfgdfdluffy</p>
+          <p className={Styles["author"]}>@{author ? author.email.split("@")[0] : ""}</p>
         </div>
 
       </div>

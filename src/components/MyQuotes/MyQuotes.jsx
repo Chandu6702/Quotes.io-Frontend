@@ -23,7 +23,9 @@ function MyQuotes() {
   async function fetchQuotes() {
     try {
       console.log(user);
-      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/quotes?user=${user.user}&sortby=${searchParams.get("sortby")}&genre=${searchParams.get("genre")}`)
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/quote/my-quotes?user=${user.user}&sortby=${searchParams.get("sortby")}&genre=${searchParams.get("genre")}`)
+
+      console.log(response);
 
       setQuotes(response.data)
 
@@ -48,7 +50,7 @@ function MyQuotes() {
           <div id={Styles['cards']}>
             {
               quotes.map((item) => (
-                <Card key={item._id} text={item.quote}></Card>
+                <Card key={item._id} text={item.quote} author={item.author} id={item._id} likes={item.liked_by.length} liked={item.isLiked}></Card>
               ))
             }
 

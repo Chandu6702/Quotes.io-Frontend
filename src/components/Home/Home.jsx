@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Styles from "./Home.module.css";
 import SlideShow from "./SlideShow/SlideShow";
-import axios from "axios";
 
 function Home() {
 

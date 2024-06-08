@@ -49,7 +49,7 @@ function AddQuote({ fun }) {
                 alert("Quote should be minimum of 4 words")
                 return
             }
-            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/add-quote`, data)
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/quote/add-quote`, data)
             alert("Successfully added new quote")
             setData({ quote: "", genres: [] })
         } catch (error) {
