@@ -7,7 +7,7 @@ import { FcLike } from "react-icons/fc";
 
 function Card({ text }) {
 
-  const handleLike=(e)=>{
+  const handleLike = (e) => {
     console.log("liked");
   }
 
@@ -19,17 +19,16 @@ function Card({ text }) {
       <div className={Styles["wrapper"]}>
 
         <div className={Styles["icons"]}>
-          <div className={Styles['like']}  onClick={handleLike}>
+
+          <div className={Styles['like']} onClick={handleLike}>
             <FcLike size={30} color="rgba(255, 255, 255, 0.581)" />
             143
           </div>
-          {/* <div className={Styles['comment']}>
-            <FaRegComment size={30} color="rgba(255, 255, 255, 0.581)" />
-            143
-          </div> */}
+
           <div className={Styles['share']}>
             <IoIosShareAlt size={30} color="rgba(255, 255, 255, 0.581)" />
           </div>
+
         </div>
 
         <div>

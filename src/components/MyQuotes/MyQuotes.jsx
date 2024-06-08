@@ -1,12 +1,36 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Styles from './MyQuotes.module.css'
 import Filter from './Filter/Filter.jsx';
 import Card from "../utils/Card/Card.jsx"
 import AddQuote from './AddQuote/AddQuote.jsx';
+import axios from 'axios';
+import { UserContext } from '../../Context/UserContext/UserContext.js';
+import { useSearchParams } from 'react-router-dom';
 
 function MyQuotes() {
 
   const [addQuote, setAddQuote] = useState(false);
+  const [quotes, setQuotes] = useState([]);
+
+  const { user } = useContext(UserContext)
+  const [searchParams, setSearchParams] = useSearchParams();
+
+
+  useEffect(() => {
+    fetchQuotes()
+  }, [searchParams])
+
+  async function fetchQuotes() {
+    try {
+      console.log(user);
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/quotes?user=${user.user}&sortby=${searchParams.get("sortby")}&genre=${searchParams.get("genre")}`)
+
+      setQuotes(response.data)
+
+    } catch (error) {
+
+    }
+  }
 
   return (
     <div id={Styles['container']}>
@@ -18,28 +42,16 @@ function MyQuotes() {
           <button id={Styles['add-btn']} onClick={() => setAddQuote(!addQuote)}>Add new Quote +</button>
         </div>
 
-        {
-          addQuote ?
-            <AddQuote fun={setAddQuote} />
-            : ""
-        }
+        {(addQuote && <AddQuote fun={setAddQuote} />)}
 
         <div id={Styles['cards-wrapper']}>
           <div id={Styles['cards']}>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+            {
+              quotes.map((item) => (
+                <Card key={item._id} text={item.quote}></Card>
+              ))
+            }
+
           </div>
         </div>
 

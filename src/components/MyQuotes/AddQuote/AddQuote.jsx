@@ -41,13 +41,17 @@ function AddQuote({ fun }) {
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/add-quote`, data, {
-                headers: {
-                    "Authorization": "Bearer " + localStorage.getItem("ACCESS_TOKEN")
-                },
-                withCredentials: true
-            })
-            console.log(response);
+            if (data.quote === "" || data.genres.length === 0) {
+                alert("Fill all the details")
+                return
+            }
+            if (data.quote.split(" ").length <= 3) {
+                alert("Quote should be minimum of 4 words")
+                return
+            }
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/add-quote`, data)
+            alert("Successfully added new quote")
+            setData({ quote: "", genres: [] })
         } catch (error) {
 
         }
@@ -59,7 +63,7 @@ function AddQuote({ fun }) {
                 <div id={Styles['close']}>
                     <button onClick={() => fun(false)} >X</button>
                 </div>
-                <textarea name='quote' placeholder='Write your quote here...' onChange={handleChange} />
+                <textarea name='quote' placeholder='Write your quote here...' onChange={handleChange} value={data.quote} />
                 <h3>Genres</h3>
                 <hr />
                 <ul>

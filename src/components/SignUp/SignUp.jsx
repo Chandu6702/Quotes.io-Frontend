@@ -55,7 +55,6 @@ function SignUp() {
 
     setUserAuth(true);
     setUser({ user: signupInfo.email })
-    localStorage.setItem("user", signupInfo.email);
     setSignupInfo({
       email: '',
       password: '',

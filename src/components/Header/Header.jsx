@@ -6,7 +6,7 @@ import axios from "axios";
 
 function Header() {
 
-  const { userAuth, setUserAuth, user } = useContext(UserContext)
+  const { userAuth, setUserAuth, user, setUser } = useContext(UserContext)
   const navigate = useNavigate()
 
   async function logout(e) {
@@ -17,6 +17,7 @@ function Header() {
       if (response.data.status) {
         localStorage.removeItem("user")
         setUserAuth(false)
+        setUser({ user: "" })
         navigate("/")
       }
     } catch (error) {
