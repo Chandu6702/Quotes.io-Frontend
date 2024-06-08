@@ -4,7 +4,7 @@ import Styles from './SlideShow.module.css'
 function SlideShow() {
 
   const arr=[
-    'Inosdasd asasd as a ','sadas da  a sdsa as asdas das','dasddsad adsadsdasd dsadq daasdq asd ','asdassdsdasdsd sdasdasdsadqdsada sda'
+    'A fine quotation is a diamond in the hand of a man of wit and a pebble in the hand of a fool.'
   ]
 
   const[idx,setIdx]=useState(0)
