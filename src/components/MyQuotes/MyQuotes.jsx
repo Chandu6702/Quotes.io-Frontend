@@ -50,7 +50,7 @@ function MyQuotes() {
           <div id={Styles['cards']}>
             {
               quotes.map((item) => (
-                <Card key={item._id} text={item.quote} author={item.author} id={item._id} likes={item.liked_by.length} liked={item.isLiked}></Card>
+                <Card key={item._id} text={item.quote} author={item.author.email} id={item._id} likes={item.liked_by.length} liked={item.isLiked}></Card>
               ))
             }
 

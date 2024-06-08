@@ -5,7 +5,9 @@ import { FaHeart } from "react-icons/fa";
 import axios from 'axios';
 
 
-function Card({ text, author, liked = false, id, likes = 0 }) {
+function Card({ text, author, liked, id, likes = 0 }) {
+
+  console.log(typeof liked, liked);
 
   const [isliked, setIsLiked] = useState(liked)
   const [likeCount, setLikeCount] = useState(likes)
@@ -15,7 +17,7 @@ function Card({ text, author, liked = false, id, likes = 0 }) {
       setIsLiked(true)
       const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/quote/like`, {
         id: id,
-        user: author.email
+        user: author
       })
       setLikeCount(likeCount + 1);
       console.log(response);
@@ -28,7 +30,7 @@ function Card({ text, author, liked = false, id, likes = 0 }) {
       setIsLiked(false)
       const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/quote/dislike`, {
         id: id,
-        user: author.email
+        user: author
       })
       setLikeCount(likeCount - 1);
       console.log(response);
@@ -61,7 +63,7 @@ function Card({ text, author, liked = false, id, likes = 0 }) {
         </div>
 
         <div>
-          <p className={Styles["author"]}>@{author ? author.email.split("@")[0] : ""}</p>
+          <p className={Styles["author"]}>@{author ? author.split("@")[0] : ""}</p>
         </div>
 
       </div>
