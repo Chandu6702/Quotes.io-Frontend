@@ -28,14 +28,14 @@ function Filter() {
     setSearchParams((prev) => {
       prev.set("genre", e.target.getAttribute("data-value").toLowerCase());
       return prev;
-    });
+    }, { replace: true });
   };
 
   const handleSortBy = (e) => {
     setSearchParams((prev) => {
       prev.set("sortby", e.target.value.toLowerCase());
       return prev;
-    });
+    }, { replace: true });
   };
 
   return (
@@ -84,6 +84,7 @@ function Filter() {
                 name="sortby"
                 value={value}
                 onClick={handleSortBy}
+                checked={searchParams.get('sortby') == value.toLowerCase()}
               />
 
               {value}
@@ -91,6 +92,7 @@ function Filter() {
           ))}
         </div>
       </section>
+      <button onClick={() => setSearchParams({}, { replace: true })}>Clear</button>
     </div>
   );
 }

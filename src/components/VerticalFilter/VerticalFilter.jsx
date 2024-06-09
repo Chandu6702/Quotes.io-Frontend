@@ -25,17 +25,21 @@ function Filter() {
   const sortBy = ["Latest", "Oldest", "Most-liked"];
 
   const handleGenre = (e) => {
-    setSearchParams((prev) => {
-      prev.set("genre", e.target.getAttribute("data-value").toLowerCase());
-      return prev;
-    });
+    const newGenre = e.target.getAttribute("data-value").toLowerCase();
+    setSearchParams((prevParams) => {
+      const newParams = new URLSearchParams(prevParams);
+      newParams.set("genre", newGenre);
+      return newParams;
+    }, { replace: true });
   };
 
   const handleSortBy = (e) => {
-    setSearchParams((prev) => {
-      prev.set("sortby", e.target.value.toLowerCase());
-      return prev;
-    });
+    const newSortBy = e.target.value.toLowerCase();
+    setSearchParams((prevParams) => {
+      const newParams = new URLSearchParams(prevParams);
+      newParams.set("sortby", newSortBy);
+      return newParams;
+    }, { replace: true });
   };
 
   return (
@@ -88,6 +92,9 @@ function Filter() {
           </label>
         ))}
       </section>
+
+      <button onClick={() => setSearchParams({}, { replace: true })}>Clear</button>
+
     </div>
   );
 }

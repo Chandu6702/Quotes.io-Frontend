@@ -14,7 +14,7 @@ function Quotes() {
 
   useEffect(() => {
     fetchQuotes()
-  }, [])
+  }, [searchParams])
 
   async function fetchQuotes() {
     try {
