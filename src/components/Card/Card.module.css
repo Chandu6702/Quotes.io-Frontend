@@ -1,15 +1,13 @@
 .container {
-    min-height: 200px;
-    width: 30vw;
-    min-width: 350px;
-    max-width: 550px;
+    height: 150px;
+    width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.538);
     border-radius: 20px;
     color: white;
     background: #00000042;
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -17,37 +15,36 @@
     box-shadow: 0 0 1rem tomato;
 }
 
-.quote::before {
-    content: open-quote;
-    font-size: 3rem;
-}
-
-.quote::after {
-    content: close-quote;
-    font-size: 30px;
+.quote {
+    min-height: 110px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrapper {
-    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    top: 30px;
-    padding-left: 20px;
+    padding: 10px 10px 10px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.397);
 }
 
 .icons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
-    position: relative;
+    margin-left: 20px;
 }
 
 .author {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.479);
+    min-width: 300px;
+    text-align: right;
 }
 
 .like,
@@ -56,6 +53,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
     cursor: pointer;
+    font-size: 15px;
 }

@@ -1,4 +1,4 @@
-#wrapper{
+#wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,8 +7,6 @@
 
 #container {
     min-height: 100vh;
-    min-width: 1200px;
-    max-width: 1500px;
     padding: 20px;
     border: 2px solid rgba(255, 255, 255, 0.129);
     border-radius: 10px;
@@ -28,17 +26,14 @@
 
 #cards {
     width: 90%;
-    height: 90vh;
+    min-height: 90vh;
     display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-around;
+    grid-template-columns: 1fr;
     align-items: center;
     margin: 50px 10px;
-    /* border: 2px solid rgba(255, 255, 255, 0.129); */
     padding: 20px;
-    row-gap: 40px;
-    overflow-y: auto;
-    border-radius: 10px;
+    row-gap: 10px;
+    overflow-y: scroll;
 }
 
 #cards::-webkit-scrollbar {
@@ -53,5 +48,3 @@
     background: #ffffff83;
     border-radius: 10px;
 }
-
-/* #filter {} */

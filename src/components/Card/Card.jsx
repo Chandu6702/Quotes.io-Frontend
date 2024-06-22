@@ -22,6 +22,8 @@ function Card({ text, author, liked, id, likes = 0 }) {
       setLikeCount(likeCount + 1);
     } catch (error) {
       console.log(error.message);
+      if (error.response.status == 401)
+        setUserAuth(false)
     }
   }
 
@@ -35,13 +37,15 @@ function Card({ text, author, liked, id, likes = 0 }) {
       setLikeCount(likeCount - 1);
     } catch (error) {
       console.log(error.message);
+      if (error.response.status == 401)
+        setUserAuth(false)
     }
   }
 
   return (
     <div className={Styles["container"]}>
 
-      <p className={Styles["quote"]}>{text}</p>
+      <p className={Styles["quote"]}>" {text} "</p>
 
       <div className={Styles["wrapper"]}>
 
@@ -49,14 +53,14 @@ function Card({ text, author, liked, id, likes = 0 }) {
 
           <div className={Styles['like']} onClick={isliked ? handleDisLike : handleLike}>
             {isliked ?
-              <FaHeart size={30} color="red" /> :
-              <FaHeart size={30} color="rgba(73, 72, 72, 0.9)" />
+              <FaHeart size={15} color="red" /> :
+              <FaHeart size={15} color="rgba(73, 72, 72, 0.9)" />
             }
             {likeCount}
           </div>
 
           <div className={Styles['share']}>
-            <IoIosShareAlt size={30} color="rgba(255, 255, 255, 0.581)" />
+            <IoIosShareAlt size={20} color="rgba(255, 255, 255, 0.581)" />
           </div>
 
         </div>

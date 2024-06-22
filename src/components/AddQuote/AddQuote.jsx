@@ -53,7 +53,8 @@ function AddQuote({ fun }) {
             alert("Successfully added new quote")
             setData({ quote: "", genres: [] })
         } catch (error) {
-
+            if (error.response.status == 401)
+                setUserAuth(false)
         }
     }
 

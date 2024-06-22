@@ -25,42 +25,48 @@ function SignUp() {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    try {
 
-    if (signupInfo.email === "" || signupInfo.password === "" || signupInfo.repassword === "") {
-      alert("Enter Required Fields")
-      return
+      e.preventDefault();
+
+      if (signupInfo.email === "" || signupInfo.password === "" || signupInfo.repassword === "") {
+        alert("Enter Required Fields")
+        return
+      }
+
+      if (signupInfo.password !== signupInfo.repassword) {
+        alert("Password doesn't match")
+        return
+      }
+
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+      if (!signupInfo.email.match(validRegex)) {
+        alert("Invalid Email");
+        return
+      }
+
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/signup`, signupInfo);
+
+      if (!response.data.status) {
+        alert(response.data.error)
+        return;
+      }
+
+      alert("Account created Successfully");
+
+      setSignupInfo({
+        email: '',
+        password: '',
+        repassword: ''
+      })
+
+      navigate("/")
+
+    } catch (error) {
+      if (error.response.status == 401)
+        setUserAuth(false)
     }
-
-    if (signupInfo.password !== signupInfo.repassword) {
-      alert("Password doesn't match")
-      return
-    }
-
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-    if (!signupInfo.email.match(validRegex)) {
-      alert("Invalid Email");
-      return
-    }
-
-    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/signup`, signupInfo);
-
-    if (!response.data.status) {
-      alert(response.data.error)
-      return;
-    }
-
-    alert("Account created Successfully");
-
-    setSignupInfo({
-      email: '',
-      password: '',
-      repassword: ''
-    })
-
-    navigate("/")
-
   }
 
   return (
