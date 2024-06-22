@@ -3,7 +3,7 @@ import Styles from "./Quotes.module.css";
 import Card from "../../components/Card/Card.jsx";
 import Filter from "../../components/VerticalFilter/VerticalFilter.jsx";
 import SearchBar from "../../components/SearchBar/SearchBar.jsx";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../../Context/UserContext/UserContext.js";
 
@@ -13,6 +13,7 @@ function Quotes() {
   const [quotes, setQuotes] = useState([]);
 
   const { setUserAuth, setUser } = useContext(UserContext)
+  const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -28,8 +29,10 @@ function Quotes() {
       setQuotes(response.data);
 
     } catch (error) {
-      if (error.response.status == 401)
+      if (error.response.status == 401) {
         setUserAuth(false)
+        navigate('/')
+      }
     }
   }
 

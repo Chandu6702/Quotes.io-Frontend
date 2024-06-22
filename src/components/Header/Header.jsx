@@ -37,13 +37,13 @@ function Header() {
           </NavLink>
         </li>
 
-        <li>
+        {userAuth && <li>
           <NavLink to={"/Quotes"} className={({ isActive }) => {
             return Styles['nav-btn'] + ' ' + (isActive ? Styles['active'] : '')
           }}>
             Quotes
           </NavLink>
-        </li>
+        </li>}
 
         <li>
           {
