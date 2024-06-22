@@ -27,18 +27,16 @@ function Filter() {
   const handleGenre = (e) => {
     const newGenre = e.target.getAttribute("data-value").toLowerCase();
     setSearchParams((prevParams) => {
-      const newParams = new URLSearchParams(prevParams);
-      newParams.set("genre", newGenre);
-      return newParams;
+      prevParams.set("genre", newGenre);
+      return prevParams;
     }, { replace: true });
   };
 
   const handleSortBy = (e) => {
     const newSortBy = e.target.value.toLowerCase();
     setSearchParams((prevParams) => {
-      const newParams = new URLSearchParams(prevParams);
-      newParams.set("sortby", newSortBy);
-      return newParams;
+      prevParams.set("sortby", newSortBy);
+      return prevParams;
     }, { replace: true });
   };
 
@@ -86,6 +84,7 @@ function Filter() {
               name="sortby"
               value={value}
               onClick={handleSortBy}
+              checked={searchParams.get('sortby') == value.toLowerCase()}
             />
 
             {value}
