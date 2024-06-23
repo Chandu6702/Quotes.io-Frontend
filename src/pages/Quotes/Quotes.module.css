@@ -35,6 +35,8 @@
     padding: 20px;
     row-gap: 50px;
     overflow-y: scroll;
+    background: #0000005d;
+    border-radius: 20px;
 }
 
 #cards::-webkit-scrollbar {
@@ -42,6 +44,7 @@
 }
 
 #cards::-webkit-scrollbar-track {
+    border-radius: 20px;
     background: rgb(0, 0, 0);
 }
 
