@@ -5,15 +5,17 @@ import Card from "../../components/Card/Card.jsx"
 import AddQuote from '../../components/AddQuote/AddQuote.jsx';
 import axios from 'axios';
 import { UserContext } from '../../Context/UserContext/UserContext.js';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 function MyQuotes() {
 
   const [addQuote, setAddQuote] = useState(false);
   const [quotes, setQuotes] = useState([]);
 
-  const { user } = useContext(UserContext)
+  const { user, setUserAuth } = useContext(UserContext)
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -27,8 +29,11 @@ function MyQuotes() {
       setQuotes(response.data)
 
     } catch (error) {
-      if (error.response.status == 401)
+      if (error.response.status == 401) {
+        console.log("came");
         setUserAuth(false)
+        navigate('/')
+      }
     }
   }
 
