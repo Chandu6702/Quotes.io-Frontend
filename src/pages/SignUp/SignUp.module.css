@@ -5,9 +5,9 @@
     align-items: center;
 }
 
-.container img{
+.container img {
     width: 35%;
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 .signup-card {
@@ -20,11 +20,11 @@
     padding: 2%;
     border-radius: 1rem;
     box-shadow: 0 0 1rem #7c1fff;
-    font-size: 2rem;
 
 }
 
 .signup-card h2 {
+    font-size: 3rem;
     text-decoration: underline;
 }
 
